@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curl
+  labels:
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: curl
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: curl
+        version: v1
+        istio.io/rev: prod-canary
+    spec:
+      serviceAccountName: curl
+      containers:
+      - name: curl
+        image: curlimages/curl:8.1.2
+        imagePullPolicy: IfNotPresent
+        command: ["sleep", "infinity"]
+        ports:
+        - containerPort: 80
