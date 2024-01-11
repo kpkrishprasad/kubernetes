@@ -8,7 +8,8 @@ CONTEXT=kind-${CLUSTER}
 echo "Creating cluster [$CLUSTER] ..."
 kind create cluster -n $CLUSTER --config=clusters/${CLUSTER}.yaml || true
 
-for NAMESPACE in demo test
-do
-    kubectl --context ${CONTEXT} create ns ${NAMESPACE} || true
-done
+# for NAMESPACE in demo test
+# do
+#     kubectl --context ${CONTEXT} create ns ${NAMESPACE} || true
+# done
+
