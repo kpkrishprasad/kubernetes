@@ -1,5 +1,7 @@
 CLUSTER ?= kind1
 
+all: kind httpbin curl 
+
 kind:
 	scripts/create-cluster.ksh ${CLUSTER}
 
