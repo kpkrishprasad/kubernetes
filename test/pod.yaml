@@ -1,0 +1,16 @@
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: httpbin
+#   namespace: demo
+#   labels:
+#     app: httpbin
+# spec:
+#   containers:
+#   - image: kennethreitz/httpbin
+#     imagePullPolicy: IfNotPresent
+#     name: httpbin
+#     ports:
+#     - containerPort: 80
+
+    
